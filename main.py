@@ -1,4 +1,4 @@
 print ("hello world")
 
-for i in range (1, 6):
+for i in range (1, 5):
      print (i)
