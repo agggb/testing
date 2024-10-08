@@ -1,4 +1,4 @@
-print ("hello world")
+'''print ("hello world")
 
 for i in range (1, 6):
     print(i)
@@ -604,7 +604,7 @@ else:
 
 #REVIEW NOT WORKING PROPERLY
 
-'''current_users = ['block', 'mouse', 'rat', 'cOw', 'boom', 'LEVI']
+current_users = ['block', 'mouse', 'rat', 'cOw', 'boom', 'LEVI']
 new_users = ['bat', 'store', 'happy', 'cow', 'lead', 'Levi']
 
 if current_users:
@@ -617,9 +617,9 @@ if current_users:
     else:
         print('bye bye')
 else:
-    print("goodbye")'''
+    print("goodbye")
 
-current_users = []
+current_users = ['block', 'mouse', 'rat', 'cOw', 'boom', 'LEVI']
 new_users = ['bat', 'store', 'happy', 'cow', 'lead', 'Levi']
 
 if current_users:
@@ -629,4 +629,179 @@ if current_users:
                 print(new_user + " is unavailable, try again...")
             else:
                 print(new_user + " is available.")
-print("goodbye")    
+print("goodbye") 
+
+current_users = ['block', 'mouse', 'rat', 'cOw', 'boom', 'LEVI']
+new_users = ['bat', 'store', 'happy', 'cow', 'lead', 'Levi']
+
+if not current_users:
+    print("The current users list is empty.")
+if not new_users:
+    print("The new users list is empty.")
+
+# Loop through the new_users list
+for new_user in new_users:
+    # Check if the username already exists (case insensitive)
+    if new_user.lower() in (user.lower() for user in current_users):
+        print(f"Username '{new_user}' is already taken. Please enter a new username.")
+    else:
+        print(f"Username '{new_user}' is available.")
+
+
+
+evens = (x for x in range(1, 11) if x % 2 == 0)
+print(list(evens))
+
+evens = (x for x in range(2, 11, 2))
+print(list(evens))
+
+for value in range(2,11,2):
+    print(list(value))
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+for number in numbers:
+    if number == 1:
+        print(str(number) + 'st')
+    elif number == 2:
+         print(str(number) + 'nd')
+    elif number == 1:
+         print(str(number) + 'rd')
+    else:
+         print(str(number) + 'th')'''
+
+
+#chapter 6 dictionaries
+
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0['color'])
+print(alien_0['points'])
+
+new_points = alien_0['points']
+print("u earned" + str(new_points) + " points")
+
+#dictionaries are dynamic structures
+
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+
+alien_0 = {}
+print(alien_0)
+
+alien_0['color'] = 'yellow'
+print(alien_0['color'])
+
+alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+print('Original x-position: ' + str(alien_0['x_position']))
+
+if alien_0['speed'] == 'slow':
+    x_increment = 1
+elif alien_0['speed'] == 'medium':
+    x_increment = 2
+else:
+    x_increment = 3
+
+alien_0['x_position'] = alien_0['x_position'] + x_increment
+print('new position: ' + str(alien_0['x_position']))
+
+#removing key value with del (removed permanently not stored elsewhere)
+
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+del alien_0['points']
+print(alien_0)
+
+#6-1 to 6-3
+
+person = {'name': 'rossivel', 'last_name': 'aquino', 'age': 25, 'city': 'SJ'}
+print('Hey ' + 
+    person['name'].title() + 
+    ' ' +
+    person['last_name'].title() +
+    ' age: ' + str(person['age']) +
+    ' from: ' + person['city'])
+
+
+fav_numbs = {'seba': 5, 'carlos': 2, 'tavo': 4}
+for fav_numb in fav_numbs:
+    print("your fav numb is: " + str(fav_numbs[fav_numb]))
+
+fav_numbs = {'seba': 5, 'carlos': 2, 'tavo': 4}
+for person, fav_numb in fav_numbs.items():
+    print('hey ' + person + " your fav numb is: " + str(fav_numb))
+
+
+#insert() and keys()
+#keys does what normal for loops would do since they go to the first
+#word in the dictionary (helps w readability if anything)
+
+fav_langs = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python',
+}
+
+friends = ['phil', 'sarah']
+for name in fav_langs:
+    print(name.title())
+    if name in friends:
+        print(" Hi " + name.title() + 
+            ", I see your fav lan is " +
+            fav_langs[name].title() + ".")
+
+if 'erin' not in fav_langs.keys():
+    print("take the poll u lil slut")
+
+print(sorted(fav_langs.keys()))
+
+for name in sorted(fav_langs.keys()):
+    print(name.title() + ", thanks")
+
+#values() thisll look at the value and not the keys
+
+print("Language: ")
+for fav_lang in fav_langs.values():
+    print(fav_lang.title())
+
+#set() wont allow us to show repetitions
+
+for fav_lang in set(fav_langs.values()):
+    print(fav_lang.title())
+
+
+glossarys = {'int': "numbers", 'str': "words", 'del': "delete"}
+
+glossarys['set'] = "remove duplicates" 
+glossarys['print'] = "output info"
+
+for name, definition in glossarys.items():
+    print('The key is ' + name + ": " + definition + ".")
+
+rivers = {'ghana': 'ghana', 'mississipi': 'usa', 'nile': 'egypt'}
+for river, country in rivers.items():
+    print("the " + river.title() + ' runs through ' + country.title())
+
+
+poll_list = ['edward', 'bambu', 'loki', 'gaia']
+
+
+for name in poll_list:
+    if name in fav_langs:
+        print("thanks for voting cum slut: " + name.title())
+    else:
+        print("u better answer the poll " + name.title())
+
+
+aliens = []
+
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]:
+    print(alien)
+
+print("total of aliens created: " + str(len(aliens)))
